@@ -1,0 +1,14 @@
+Right    
+Left    
+Take   Hammer 
+Right    
+Next    
+Back    
+Right    
+Right    
+Next    
+Back    
+Take   Rock 
+open Pathway with Hammer 
+Next    
+Exit    

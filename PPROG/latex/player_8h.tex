@@ -1,0 +1,85 @@
+\hypertarget{player_8h}{}\section{player.\+h File Reference}
+\label{player_8h}\index{player.\+h@{player.\+h}}
+
+
+It defines a player.  
+
+
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}inventory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}set.\+h\char`\"{}}\newline
+Include dependency graph for player.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{player_8h_a1c346c944e8204fd06dc057393c7c96d}\label{player_8h_a1c346c944e8204fd06dc057393c7c96d}} 
+\#define {\bfseries M\+A\+X\+\_\+\+P\+L\+A\+Y\+E\+RS}~100
+\item 
+\mbox{\Hypertarget{player_8h_a89f0201fca94cbc3ca0f5fbce851e7c9}\label{player_8h_a89f0201fca94cbc3ca0f5fbce851e7c9}} 
+\#define {\bfseries F\+I\+R\+S\+T\+\_\+\+P\+L\+A\+Y\+ER}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{player_8h_af30e2030635a69690f85e48bc6ef202f}\label{player_8h_af30e2030635a69690f85e48bc6ef202f}} 
+typedef struct \hyperlink{struct__Player}{\+\_\+\+Player} {\bfseries Player}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{player_8h_a97ea1d0deda3c51ef6ce63a13dab7a38}\label{player_8h_a97ea1d0deda3c51ef6ce63a13dab7a38}} 
+\hyperlink{struct__Player}{Player} $\ast$ {\bfseries player\+\_\+create} (Id id)
+\item 
+\mbox{\Hypertarget{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}\label{player_8h_a68e324aa5064e27d0a2f38aafb6809ad}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+destroy} (\hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\mbox{\Hypertarget{player_8h_af5a101ec91427951c5875569a8709956}\label{player_8h_af5a101ec91427951c5875569a8709956}} 
+Id {\bfseries player\+\_\+get\+\_\+id} (\hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\mbox{\Hypertarget{player_8h_a6a30809f7775f5c2d3bef47d92769e59}\label{player_8h_a6a30809f7775f5c2d3bef47d92769e59}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+set\+\_\+name} (\hyperlink{struct__Player}{Player} $\ast$player, char $\ast$name)
+\item 
+\mbox{\Hypertarget{player_8h_a6622c02be2fe230a5c0df66385a13ece}\label{player_8h_a6622c02be2fe230a5c0df66385a13ece}} 
+const char $\ast$ {\bfseries player\+\_\+get\+\_\+name} (\hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\mbox{\Hypertarget{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}\label{player_8h_ac8ace1a1b6b11bc7f92a71a3922e4b83}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+set\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player, Id id)
+\item 
+\mbox{\Hypertarget{player_8h_aa50ce77ab79af7166d749619fd60acfe}\label{player_8h_aa50ce77ab79af7166d749619fd60acfe}} 
+Id {\bfseries player\+\_\+get\+\_\+location} (\hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\mbox{\Hypertarget{player_8h_a5dc586d01ecb8f1e7a4bafe0bd6d525e}\label{player_8h_a5dc586d01ecb8f1e7a4bafe0bd6d525e}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+add\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, Id new\+Object)
+\item 
+\mbox{\Hypertarget{player_8h_a78a5f69dd0fe1cb5b15758ecae60b7e5}\label{player_8h_a78a5f69dd0fe1cb5b15758ecae60b7e5}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+del\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player, Id object)
+\item 
+\mbox{\Hypertarget{player_8h_a9f1d771ce1b076a8d58e65da4a532611}\label{player_8h_a9f1d771ce1b076a8d58e65da4a532611}} 
+\hyperlink{struct__Inventory}{Inventory} $\ast$ {\bfseries player\+\_\+get\+\_\+object} (\hyperlink{struct__Player}{Player} $\ast$player)
+\item 
+\mbox{\Hypertarget{player_8h_a9deb942fe1d141322d6de2be172c7b6a}\label{player_8h_a9deb942fe1d141322d6de2be172c7b6a}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+set\+\_\+max\+\_\+obj} (\hyperlink{struct__Player}{Player} $\ast$player, int max)
+\item 
+\mbox{\Hypertarget{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}\label{player_8h_aa0f2f8b4d1b63a60ef927d47aa45dbd1}} 
+S\+T\+A\+T\+US {\bfseries player\+\_\+print} (\hyperlink{struct__Player}{Player} $\ast$player)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+It defines a player. 
+
+\begin{DoxyAuthor}{Author}
+Daniel Varela and Aran Rodrigo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13-\/01-\/2015 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License 
+\end{DoxyCopyright}

@@ -1,0 +1,11 @@
+Next    : OK
+Next    : OK
+Next    : OK
+Next    : OK
+Next    : OK
+open peppa with key : ERROR
+Move   west : ERROR
+Move   east : OK
+Roll    : OK
+Inspect   green : OK
+Exit    : OK
