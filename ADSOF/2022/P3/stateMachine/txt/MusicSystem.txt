@@ -1,0 +1,15 @@
+@startuml
+state starting: Starting the music system
+state On{
+	state CD
+	state Tuner
+	[*]-->Tuner
+	CD-->Tuner: mode
+	Tuner-->CD: mode
+}
+state off
+[*]-->off
+starting-[#red]->On
+On-->off: power
+off-->starting: power
+@enduml

@@ -1,0 +1,16 @@
+This is a Tables & Index practice made in UAM by Daniel Varela Sanchez & Guillermo De Andres Perez, in order to use the code you must know the following commands:
+
+1) "make -f Makefile.cod" this will compile the code and create the .o and executable files. 
+
+2) "make -f Makefile.cod run" this will run the ./menu file showing the interface on the screen (you will see the instructions on how to use it in the interface, we added some extra commands to improve the experience)
+
+3) "make -f Makefile.cod test" this will execute all the code tests (all of them must return OK)
+
+4) "make -f Makefile.cod clean" this will only remove the .o files 
+
+5) "make -f Makefile.cod cleanall" this will remove all the unnecessary files (Caution! .dat and .idx files included)
+
+
+Github Link:
+
+	https://github.com/Danivarela/EDAT_P3

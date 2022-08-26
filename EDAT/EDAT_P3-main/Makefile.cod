@@ -1,0 +1,34 @@
+CC = gcc -g
+CFLAGS = -Wall -Wextra -pedantic -ansi
+# LDLIBS = -lodbc
+
+# recompile if this header changes
+HEADERS = utils.h
+MENU = menu
+EXE = tester
+OBJ = $(EXE).o utils.o checkUtils.o checkCreateTable.o checkReplaceExtensionByIdx.o \
+checkCreateIndex.o checkPrint.o checkFindKey.o checkAddIndexEntry.o checkAddTableEntry.o
+#all : $(EXE) $(MENU)
+
+
+%.o: %.c $(HEADERS)
+	@echo Compiling $<...
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(EXE): $(DEPS) $(OBJ) $(MENU).o
+	$(CC) -o $(EXE) $(OBJ) $(LDLIBS)
+	$(CC) -o $(MENU) $(MENU).o utils.o $(LDLIBS)
+
+run: $(DEPS) 
+	./$(MENU)
+
+test: $(DEPS) 
+	./$(EXE)
+	
+clean:
+	rm -f *.o 
+
+cleanall:
+	rm -f *.o *.idx *.dat core $(EXE) $(MENU) file.txt
+
+	

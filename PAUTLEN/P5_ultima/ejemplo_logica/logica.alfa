@@ -1,0 +1,12 @@
+main{
+    boolean a, b, c;
+
+    a=false;
+    b=true;
+    c=true;
+    printf a || b && c;
+    printf (a || b) && c;
+    printf !a && b && !c;
+
+
+}
