@@ -1,0 +1,66 @@
+Question 1: 
+gcc -ansi -pedantic -Wall -c graph.c node.c p1_e2.c
+This one compiles all the .c files for converting them into .o files that we can 
+link.
+gcc graph.o node.o p1_e2.o -o project 
+This one links all the .o files and creates a new executable file called project
+
+Question 2:
+
+a) It is well done, this main creates a n1 pointer, alocates memory for it and it 
+initialize all the values as the function node_init would do. Once this is done, 
+the memory is freed and released.
+
+b) (suposing that BLANCO is instead, WHITE) on the main function you are declaring
+a pointer of type Node called "n1", and you are initializing a pointer called "n",
+thay will give you an error of type undefinition of variable and the code wont even
+compile.
+
+c) On the function node_init you are returning a NULL value while the function 
+prototype is STATUS. This means that you only can return either ERROR or OK and
+this will send you a warning. Therefor, this function wont work either
+
+Question 3:
+No because when the user is sending a "Node nDest" without it being a pointer 
+it will have to return the struct of the Destination node but as that prototype 
+is a STATUS function, only OK or ERROR will be returned and the nDest will be 
+destroyed when leaving the function
+
+Question 4:
+It may not have so much sense in this exact function because you can get the 
+same result without the pointer. But doing it without the pointer will give you 
+some problems when calling the function in other primitives because we are allways 
+working with nodes as pointers. Moslty because of eficiency. 
+
+Question 5:
+If doing this type of change, you will need to implement this function
+  
+  /* STATUS node_copy (const Node *nSource, Node *nDest){
+     if (nSource == NULL || nDest == NULL) return ERROR;
+     if (node_getId(nSource)==-1) return ERROR;
+     node_setId(nDest, node_getId(nSource));
+     if (node_getName(nSource)==NULL) return ERROR;
+     node_setName(nDest, node_getName(nSource));
+     if (node_getLable(nSource)==ERROR_NODE) return ERROR;
+     node_setLabel(nDest, node_getLabel(nSource));
+     if (node_getConect(nSource)==-1) return ERROR;
+     node_setNConnect(nDest, node_getConnect(nSource));
+     return OK;
+  } */
+
+That function because of the double pointer will require changing a lot of the
+original code inside and outside of the function itselef. It can work, but is just
+a way of makeing thing more complex.
+
+Question 6:
+This functions only have a meaning if you know all the way the struct is created, 
+we order the nodes by their moment entering the function and not by their Id,
+therefor, there is much more easy for the programer to have a private function in 
+the ADT for him to find the index fast and quicker. But as it is only a programers 
+tool, it is better for you to have it private. The user do not need this type of 
+information.
+
+Question 7:
+We think that type of nameing the function would be correct because you 
+only change the prototype and as you are actualy sending a Node pointer
+this change shouldn't afect the final resoult of the code.

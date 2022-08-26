@@ -1,0 +1,7 @@
+1. ¿Que cambios habría que hacer en el prototipo y pseudocódigo de la función listMergeOrdered para que en vez de 2 listas concatenase N listas? No hace falta que proporciones el pseudocódigo de este nuevo algoritmo, tan solo cuenta la idea general.
+
+Tendríamos que initializer un array de listas en vez de solo dos y entonces repetir el proceso de concatenación de dos listas entre la lista resultante de la concatenación anterior y la siguiente. Ese decir el mismo proceso pero con el resultado del proceso anterior, de esta manera se incluirían todos los elementos de las listas en la lista final.
+
+2. Suponga este otro algoritmo para concatenar dos listas ordenadas de menor a mayor. A diferencia del algoritmo anterior, este nuevo algoritmo sí modifica las listas originales. ¿Cual es su coste temporal (complejidad algorítmica)? Compárelo con el algoritmo que tuvo que programar. Justifique su respuesta.
+
+Este algoritmo seria mucho mas sencillo de implementar ya que en vez de meter todos los valores otra vez tienes que implementar solamente los de una lista ahorrando así mucho código y aumentando la velocidad. Aún así, es mas practico el hecho de crear una lista nueva ya que de esta manera te permite también seguir trabajando con la lista inicial.

@@ -1,0 +1,92 @@
+Questions by Santiago Atrio and Daniel Varela
+
+Question 1: Algorithms
+With our implementation, the result in postfix for x^y^z
+is xy^z^ and, if we wanted to use the Mary languages way, 
+the result should be (again in postfix) xyz^^. For implementing
+this, we have proposed the following 
+
+pseudocode:
+/**
+* Status infix2postfix (String suf, String in) {
+*   ret = TRUE
+*   s = stack_ini ()
+*   while inside string {
+*   // if symbol read is an operator
+*   if isOperator (in[i]) == TRUE {
+*   while stack_isEmpty (s) == FALSE AND prec (stack_top (s)) > prec (in[i]) :
+*     ele = stack_pop (s)
+*     suf [j] = ele
+*     j = j + 1
+*   stack_push (stack, in[i])
+*   // else symbol read is a open parenthesis
+*   } else if in[i] == '(' {
+*     stack_push (stack, in[i])
+*   // else symbol read is a close parenthesis
+*   } else if in[i] == ')' {
+*     while stack_isEmpty (s) == FALSE AND stack_top (stack) <> '(' {
+*       ele = stack_pop (stack)
+*       suf [j] = ele
+*       j = j + 1
+*     }
+*     stack_pop (stack)
+*   // else symbol read is an operand
+*   } else {
+*     suf[j] = in[i]
+*     j = j + 1
+*     i = i + 1
+*   }
+*   }
+*   while stack_isEmpty (s) == FALSE {
+*     ele = stack_pop (stack)
+*     suf [j] = ele
+*     j = j + 1
+*   }
+*   stack_free (s)
+*   return TRUE
+* }
+*/
+
+The only thing we have to change is the ">=" when we check the
+precedence of the operators. This way, when two same operators
+are reded, intead of poping the elements in the stack, we will
+push the operator and the postfix result will be the desired 
+one.
+
+Question 2: Hidden types
+You will need to pop every single element inside the stack
+and you will need to check every TOP element till it is 
+different than NULL and then reintroduce avery element to 
+the stack. We are thinking this because as you cannot do
+"s->item[i]", there is no other way to access the size but
+poping every element and counting them.
+
+code: 
+/**
+* int stack_get_size(Stack *s) {
+*   Element *ele[MAXSTACK];
+*   int i, j;
+*   if (s==NULL) return -1;
+*   for (i=0; i<MAXSTACK; i++) {
+*     ele[i]=stack_pop(s);
+*     if (ele[i]==NULL) break;
+*   }
+*   for (j=i-1; j<=0; j--) {
+*    stack_push(s, ele[j]);
+*   }
+*   return i;
+* }
+*/
+
+It execution time will be different based on the number of
+objects there are stored in the stack, therefor it's O(n), 
+being n the number of element inside the stack.
+
+Question 3: Design
+With the actual implementation we cannot implement the exercise
+number 0b, because we need to create two different stacks of
+completely diferent element types. Right now, that could be 
+imposible, but, we could change it by changeing the stack ADT
+and the Element ADT. Implementing different functions and using
+pointers to function for initialize and element of different types,
+copying and freeing them.

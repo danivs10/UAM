@@ -1,0 +1,50 @@
+• Analice la salida de los dos programas anteriores teniendo en cuenta la estructura de los árboles generados. Para ello es interesante ejecutar el programa p4_e3_b con valores grandes de n (n > 1000). Para evitar repetir muchos números, genérelos entre 0 y INT_MAX (para ello deberá incluir en su programa la biblioteca ). 
+
+Depende, en el caso de que sepas si tu árbol esta ordenado o no, siempre sera mas rápido el árbol ordenado, pero en caso de que no lo sepas, el desordenado sera mas rápido ya que tiene menos profundidad.
+
+• Proporcione el pseudocódigo de un algoritmo que ordene los elementos de un BST de mayor a menor. 
+
+Element *OrderBST(Tree *tree){
+	Element *ordered
+	Element *array
+	int *i
+	int n, k, sm
+	Node *aux
+	finalTree = tree_init(element_function)
+	Order_BST_Recursive(tree, tree->root, array, i)
+	aux=node->root
+	array[*i]=aux->info
+	for(n=0, k=0, sm=0; k<sizeof(array); k++)
+		for(n=0; n<sizeof(array); n++)
+			if(elementCompare(array[n], array[sm])>0)
+				sm=n
+		ordered[k]=array[sm]
+		array[sm]=-1
+	return ordered
+}
+
+void Order_BST_Recursive(Tree *tree, Node *node, Element *array  ,int *i ){
+	order_BST_Recursive(tree, node->left, array, i)
+	order_BST_Recursive(tree, node->right, array, i)
+	array[*i]=node->info
+	*i++
+	return
+}
+
+
+• ¿Cual sería la complejidad algorítmica en tiempo de ejecución de la función para buscar un elemento en los árboles BST generados en el ejercicio p4_e3_b.c? Justifique brevemente su respuesta. 
+
+La complejidad algorítmica dependerá de la profundidad a la que se encuentre el nodo dentro del árbol, por  lo tanto estaríamos hablando de un tiempo de ejecución de O(2n) siendo ’n’ la profundidad a la que se encuentra el nodo, y necesitaríamos un 2 dado que la función se trata de una recursiva y se necesitarán ’n’ tiempos para llegar a dicho nodo y otros n tiempos para volver a la función principal.
+
+• Suponiendo que no pudiese modificar la funcionalidad de los TAD Node y Graph, esto es los ficheros .h, proporcione una estructura de datos (EdD) eficiente para el TAD Graph. Se considerará que la EdD es eficiente cuando la complejidad algorítmica (en tiempo de ejecución) de las funciones de la interfaz fuese igual o inferior, en promedio, a O(log n) (excepto, obviamente, para aquellas funciones que impliquen recorrer todo los nodos del grafo como graph_print o graph_free). Justifique su respuesta.
+
+struct _Graph {
+	Node **nodes;
+	BOOL **connections;
+	int num_nodes;
+	int num_edges;
+	int capacity;
+];
+
+
+Usando dobles punteros solo alocas la memoria necesaria mientras que no pierdes la velocidad qu ese proporciona un array. 

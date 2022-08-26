@@ -1,0 +1,3 @@
+The difference between BFS and DFS.
+
+In the code we've made we can appreciate that BFS and DFS though obtaining the same result are different ways of tree searching: on one hand we have BFS wich is a vertex-based technique that uses a queue data structure and on the other hand we have DFS wich is an edge-based technique that uses stack data structure. These small differences allow us to choose wich one is mor suitable for an specific circumstance.
